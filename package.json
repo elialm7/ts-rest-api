@@ -7,7 +7,7 @@
     "build": "tsc",
     "buildrun": "tsc && node dist/app.js",
     "start": "node dist/app.js",
-    "dev": "ts-node src/app.ts"
+    "dev": "ts-node-dev src/app.ts"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
     "@types/node": "^20.14.7",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "http-status-codes": "^2.3.0"
+    "http-status-codes": "^2.3.0",
+    "ts-node-dev": "^2.0.0"
   }
 }

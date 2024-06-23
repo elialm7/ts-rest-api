@@ -1,14 +1,10 @@
 import {Router} from 'express';
 import { StatusCodes } from 'http-status-codes';
+import {CitiesController} from '../controllers';
 const router = Router();
 
 
-router.get('/info/', async (req, res)=>{
-    res.status(StatusCodes.OK).send({
-        status:'working'
-    });
-
-})
+router.post('/create',CitiesController.createCity);
 
 
 
