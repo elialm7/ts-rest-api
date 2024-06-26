@@ -1,13 +1,6 @@
-import {Router} from 'express';
-import { StatusCodes } from 'http-status-codes';
-import {CitiesController} from '../controllers';
-const router = Router();
+import { CityRouter } from './CityRouter';
+import { UserRouter } from './UserRouter';
 
-
-router.post('/create',CitiesController.createCity);
-
-
-
-
-
-export {router};
+export const routers = {
+    CityRouter, UserRouter
+}

@@ -1,11 +1,12 @@
 import express  from 'express';
 
 import bodyparser from 'body-parser';
-import { router } from '../routes';
+import { routers } from '../routes';
 const server = express();
 
 server.use(bodyparser.json());
-server.use('/api', router);
+server.use('/api/cities', routers.CityRouter);
+server.use('/api/user', routers.UserRouter);
 
 
 
