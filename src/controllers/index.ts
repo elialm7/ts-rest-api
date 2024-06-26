@@ -1,4 +1,4 @@
-import * as UserController from './UserController';
+import * as UserController from './User.Controller';
 
 export const UserControllers = {
     ...UserController

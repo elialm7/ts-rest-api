@@ -1,6 +1,5 @@
-import { CityRouter } from './CityRouter';
-import { UserRouter } from './UserRouter';
+import { UserRouter } from './User.Router';
 
 export const routers = {
-    CityRouter, UserRouter
+    UserRouter
 }

@@ -5,7 +5,6 @@ import { routers } from '../routes';
 const server = express();
 
 server.use(bodyparser.json());
-server.use('/api/cities', routers.CityRouter);
 server.use('/api/user', routers.UserRouter);
 
 

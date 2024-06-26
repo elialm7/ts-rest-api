@@ -1,6 +1,6 @@
 import {z} from 'zod';
-const MINIMUNPASSLENGHT = 4;
-export const UserRegistrationValidationSchema = z.object(
+export const MINIMUNPASSLENGHT = 4;
+export const UserValidationSchema = z.object(
     {
         username: z.string(), 
         email: z.string().email(), 
