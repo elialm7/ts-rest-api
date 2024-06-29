@@ -10,7 +10,7 @@ export class UserInMemoryDatabase {
   private users: Array<TemporalCompleteUser> = [];
 
   public constructor (){
-    
+
   }
   public addUser(user: TemporalCompleteUser): void {
     this.users.push(user);
@@ -20,7 +20,7 @@ export class UserInMemoryDatabase {
     return this.users.find((user) => user.userid === userid);
   }
 
- public  userExists(userid: number): boolean {
+  public  userExists(userid: number): boolean {
     return this.users.some((user) => user.userid === userid);
   }
 }

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-
+import { UserInMemoryDatabase } from "../database/temporalUser.database";
 
 export const RegisterUser = async (
     req: Request, 
