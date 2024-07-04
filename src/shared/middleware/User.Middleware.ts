@@ -1,8 +1,7 @@
 import {NextFunction, Request, Response} from 'express';
 
 import {z, ZodError} from 'zod';
-
-
+import jwt from 'jsonwebtoken';
 
 import { StatusCodes } from 'http-status-codes';
 
@@ -24,4 +23,31 @@ export function validateData(schema: z.ZodObject<any, any>) {
         }
       }
     };
+  }
+
+//this code feels so sus
+  export function authenticateJWT(req: Request, res:Response, next:NextFunction){
+    const token = req.headers.authorization;
+    const secret_key = process.env.PRIVATE_KEY_JWT_TOKEN;
+    if(!secret_key){
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+        message:'jwt key not set up'
+      })
+    }
+    if(!token){
+      return res.status(StatusCodes.UNAUTHORIZED).json({
+        message: 'Unauthorized'
+      });
+    }
+
+    jwt.verify(token, secret_key, (err, _)=>{
+        if(err){
+          return res.status(StatusCodes.FORBIDDEN).json({
+            message:'Token verificatin failed'
+          });
+        }
+       // req.user = decoded;
+        next();
+    });
+  
   }

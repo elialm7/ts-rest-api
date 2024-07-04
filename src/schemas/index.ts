@@ -1,1 +1,1 @@
-export * as Validation from './User.Validation';
+export * as Validation from './user.validation';

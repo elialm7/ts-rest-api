@@ -3,14 +3,13 @@ export interface TemporalCompleteUser {
     userid:number, 
     username:string, 
     password:string, 
-    userInfo:String
+    email:string
 };
 
 export class UserInMemoryDatabase {
   private users: Array<TemporalCompleteUser> = [];
 
   public constructor (){
-
   }
   public addUser(user: TemporalCompleteUser): void {
     this.users.push(user);
@@ -20,7 +19,12 @@ export class UserInMemoryDatabase {
     return this.users.find((user) => user.userid === userid);
   }
 
-  public  userExists(userid: number): boolean {
-    return this.users.some((user) => user.userid === userid);
+  public  userExists(username:string, pass:string): TemporalCompleteUser | undefined {
+    return this.users.find((users)=>{
+       if((users.username === username) && (users.password === pass)){
+        return users;
+       }
+    });
   }
+
 }

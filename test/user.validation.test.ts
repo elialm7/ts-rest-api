@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { MINIMUNPASSLENGHT, UserValidationSchema, LoginValidationSchema } from '../src/schemas/User.Validation';
+import { MINIMUNPASSLENGHT, UserValidationSchema, LoginValidationSchema } from '../src/schemas/user.validation';
 
 describe('Validation Schemas', () => {
     

@@ -1,4 +1,5 @@
-import { UserRouter } from './User.Router';
+import { UserRouter } from './user.router';
+
 
 export const routers = {
     UserRouter
